@@ -26,11 +26,11 @@ public class ShellSort {
 		int d = a.length;
 		while (d > 1) {
 			d = d / 2;
-			for (int x = 0; x < d; x++) {
-				for (int i = x + d; i < a.length; i = i + d) {
+			for (int x = 0; x < d; x++) {//把数据分为d组
+				for (int i = x + d; i < a.length; i = i + d) {//根据间距进行分组
 					int temp = a[i];
 					int j;
-					for (j = i - d; j >= 0 && a[j] > temp; j = j - d) {
+					for (j = i - d; j >= 0 && a[j] > temp; j = j - d) {//对组内数据进行插入排序
 						a[j + d] = a[j];
 					}
 					a[j + d] = temp;
